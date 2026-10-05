@@ -54,3 +54,11 @@ $router->post('api/products', 'ApiController::createProduct');
 $router->put('api/products/{id}', 'ApiController::updateProduct');
 $router->patch('api/products/{id}', 'ApiController::updateProduct');
 $router->delete('api/products/{id}', 'ApiController::deleteProduct');
+
+//Migration Routes
+$router->get('create-migration/{migration_class}', 'MigrationController::create_migration');
+$router->get('migrate', 'MigrationController::migrate');
+$router->get('rollback', 'MigrationController::rollback');
+$router->get('rollback-all', 'MigrationController::rollback_all');
+$router->get('refresh', 'MigrationController::refresh');
+$router->get('status', 'MigrationController::status');
